@@ -1,0 +1,40 @@
+{
+	"name": "ESP-IDF QEMU",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"mounts": [
+		"type=bind,source=/dev/ttyUSB0,target=/dev/ttyUSB0",
+		"type=bind,source=/home/ouweneel/.ssh,target=/home/ubuntu/.ssh"
+	],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"idf.espIdfPath": "/opt/esp/idf",
+				"idf.customExtraPaths": "",
+				"idf.pythonBinPath": "/opt/esp/python_env/idf5.4_py3.12_env/bin/python",
+				"idf.toolsPath": "/opt/esp",
+				"idf.gitPath": "/usr/bin/git"
+			},
+			"extensions": [
+				"espressif.esp-idf-extension"
+			]
+		},
+		"codespaces": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"idf.espIdfPath": "/opt/esp/idf",
+				"idf.customExtraPaths": "",
+				"idf.pythonBinPath": "/opt/esp/python_env/idf5.4_py3.12_env/bin/python",
+				"idf.toolsPath": "/opt/esp",
+				"idf.gitPath": "/usr/bin/git"
+			},
+			"extensions": [
+				"espressif.esp-idf-extension",
+				"espressif.esp-idf-web"
+			]
+		}
+	},
+	"runArgs": ["--privileged"]
+}
